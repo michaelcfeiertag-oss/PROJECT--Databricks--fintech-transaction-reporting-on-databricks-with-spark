@@ -1,0 +1,18 @@
+catalog: fintech_dev
+schema: reporting
+volume: raw_data
+
+raw_paths:
+  transactions: /Volumes/fintech_dev/reporting/raw_data/transactions.csv
+  customers: /Volumes/fintech_dev/reporting/raw_data/customers.csv
+  accounts: /Volumes/fintech_dev/reporting/raw_data/accounts.csv
+
+silver_tables:
+  transactions: fintech_dev.reporting.silver_transactions
+
+gold_tables:
+  daily_summary: fintech_dev.reporting.gold_daily_summary
+  failed_transactions: fintech_dev.reporting.gold_failed_transactions
+  high_value_transfers: fintech_dev.reporting.gold_high_value_transfers
+  payment_channel_summary: fintech_dev.reporting.gold_payment_channel_summary
+  international_summary: fintech_dev.reporting.gold_international_summary

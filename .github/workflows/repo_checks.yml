@@ -1,0 +1,22 @@
+name: Repo checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  markdown-and-sql-presence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check expected folders exist
+        run: |
+          test -d notebooks
+          test -d sql
+          test -d docs
+          test -d sample_data
+      - name: Check expected root files exist
+        run: |
+          test -f README.md
+          test -f PROJECT_ASSIGNMENT.md
+          test -f config/uc_names.md
